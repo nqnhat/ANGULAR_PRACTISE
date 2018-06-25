@@ -1,16 +1,27 @@
+import { NgModule }   from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { AppComponent }  from './app.component';
+import { AddressComponent }  from './address.component';
+import { PageNotFoundComponent }  from './page-not-found.component';
+
+import { CountryModule }  from './country/country.module';
+import { PersonModule }  from './person/person.module';
+import { AppRoutingModule }  from './app.routing.module';
 
 @NgModule({
+  imports: [     
+        BrowserModule,
+	CountryModule,
+	PersonModule,
+	AppRoutingModule,
+  ],
   declarations: [
-    AppComponent
+        AppComponent,
+	AddressComponent,
+	PageNotFoundComponent
   ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ ],
+  bootstrap: [ AppComponent ]
 })
-export class AppModule { }
+export class AppModule { } 
